@@ -4,9 +4,148 @@
 
 // Variables
 @import "variables";
+$color-one: #004358;
+$color-two: #1F8A70;
+$color-three:#BEDB39;
 
-// Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@mixin padding-top {
+  padding-top: 50px;
+}
+
+@mixin margin-top{
+  margin-top: 20px;
+}
+
+* {
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial,Helvetica,sans-serif;
+}
+body{
+  background-color: $color-two;
+}
+
+.header {
+  height: 45px;
+  background-color: $color-three;
+  ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+}
+
+.container{
+  @include padding-top;
+  text-align: center;
+
+  .register {
+      div {
+        @include margin-top;
+      }
+    &__button{
+      text-align: center;
+    }
+  }
+  .login{
+        div{
+          @include margin-top;
+        }
+      &__button{
+        text-align: center;
+      }
+    }
+  .products{
+      text-align: center;
+      &__item{
+        margin: 5px;
+        margin-top: 10px;
+        input[type="file"]{
+          display: none;
+        }
+        label[for="image"]{
+          @extend .button;
+        }
+      }
+    }
+  &__card {
+    display: block;
+    background-color: white;
+    margin: 25px;
+    border-radius: 5px;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    img {
+      width: 100%;
+      margin-top: 10px;
+    }
+    &__user{
+      margin: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 10px;
+      >img{
+        max-width: 50px;
+        margin-right: 10px;
+        border-radius: 50px;
+      }
+    }
+
+    &__info {
+      display: flex;
+      align-item: center;
+      justify-content: space-between;
+      >h3, >h4{
+        display: inline-block;
+        width: auto;
+        padding: 5px 0 5px 0;
+      }
+      h3{
+        color: $color-one;
+      }
+      h4{
+        color: $color-two;
+      }
+    }
+  }
+  &__img{
+    width: 40px;
+  }
+}
+.container .products__item {
+    margin: 5px;
+    margin-top: 10px;
+}
+
+hr {
+  margin: 5px;
+  width: 100%;
+}
+
+input[type="text"], input[type="password"]{
+  border-radius: 5px;
+}
+button, .button{
+  border-radius: 5px;
+  padding: 2px;
+  width: 90px;
+  height: 25px;
+  background-color: $color-three;
+}
 
 //Some code
+
+
 
